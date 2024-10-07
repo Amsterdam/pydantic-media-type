@@ -1,0 +1,7 @@
+services:
+  pydantic-media-type:
+    image: amsterdam/pydantic-media-type
+    build:
+      context: .
+    volumes:
+      - ".:/opt/pydantic-media-type"

@@ -1,0 +1,15 @@
+{
+  "target": {
+    "pydantic-media-type": {
+      "cache-from": [
+        "type=registry,ref=ghcr.io/amsterdam/pydantic-media-type:cache"
+      ],
+      "cache-to": [
+        "type=registry,ref=ghcr.io/amsterdam/pydantic-media-type:cache"
+      ],
+      "output": [
+        "type=docker"
+      ]
+    }
+  }
+}
