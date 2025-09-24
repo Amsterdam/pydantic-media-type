@@ -8,9 +8,6 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.10"
 
-[project.urls]
-Repository = "https://github.com/Amsterdam/pydantic-media-type.git"
-
 dependencies = [
     "pydantic (>=2.10.6,<3.0.0)",
 ]
@@ -21,6 +18,9 @@ dev = [
     "pytest>=8.4.2",
     "ruff>=0.13.1",
 ]
+
+[project.urls]
+Repository = "https://github.com/Amsterdam/pydantic-media-type.git"
 
 [build-system]
 requires = ["uv_build>=0.8.19,<0.9.0"]
