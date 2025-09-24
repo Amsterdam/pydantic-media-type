@@ -6,6 +6,7 @@ from pydantic_core import CoreSchema, PydanticCustomError, core_schema
 
 
 class MediaType(str):
+    __slots__ = ()
     types: ClassVar[list[str]] = []
 
     @classmethod
