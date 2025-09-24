@@ -9,11 +9,12 @@ jobs:
 
     steps:
       # https://github.com/actions/checkout
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - name: "Set up Python"
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version-file: "pyproject.toml"
 
       - name: Install poetry
         uses: abatilo/actions-poetry@v2
@@ -40,11 +41,12 @@ jobs:
 
     steps:
       # https://github.com/actions/checkout
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - name: "Set up Python"
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version-file: "pyproject.toml"
 
       - name: Install poetry
         uses: abatilo/actions-poetry@v2
@@ -71,11 +73,12 @@ jobs:
 
     steps:
       # https://github.com/actions/checkout
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - name: "Set up Python"
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
+          python-version-file: "pyproject.toml"
 
       - name: Install poetry
         uses: abatilo/actions-poetry@v2
