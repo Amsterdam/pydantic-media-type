@@ -19,7 +19,7 @@ class MediaType(str):
                         cls.types.append(mime_type)
 
     @classmethod
-    def _validate(cls, value: str, source_type: Any) -> str:
+    def _validate(cls, value: str, source_type: Any) -> str:  # noqa: ANN401, ARG003
         cls._init_types()
 
         if value not in cls.types:
@@ -32,7 +32,7 @@ class MediaType(str):
 
     @classmethod
     def __get_pydantic_core_schema__(
-        cls, source_type: Any, handler: GetCoreSchemaHandler,
+        cls, source_type: Any, handler: GetCoreSchemaHandler,  # noqa: ANN401
     ) -> CoreSchema:
         return core_schema.with_info_before_validator_function(
             cls._validate,
