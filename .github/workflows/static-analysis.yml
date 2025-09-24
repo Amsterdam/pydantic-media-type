@@ -25,7 +25,7 @@ jobs:
         run: uv sync --locked --all-extras --dev
 
       - name: black
-        run: poetry run black . --check
+        run: uv run black . --check
 
   iSort:
     runs-on: ubuntu-latest
@@ -48,7 +48,7 @@ jobs:
         run: uv sync --locked --all-extras --dev
 
       - name: isort
-        run: poetry run isort . --check
+        run: uv run isort . --check
 
   MyPy:
     runs-on: ubuntu-latest
@@ -71,4 +71,4 @@ jobs:
         run: uv sync --locked --all-extras --dev
 
       - name: mypy
-        run: poetry run mypy --strict .
+        run: uv run mypy --strict .
