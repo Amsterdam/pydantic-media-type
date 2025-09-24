@@ -6,17 +6,19 @@ authors = [
     {name = "Youri Westerman",email = "y.westerman@amsterdam.nl"},
 ]
 readme = "README.md"
-requires-python = "^3.13"
+requires-python = ">=3.10"
 
 dependencies = [
     "pydantic (>=2.10.6,<3.0.0)",
 ]
 
-[tool.poetry.group.dev.dependencies]
-black = "^25.1.0"
-isort = "^6.0.0"
-mypy = "^1.18.2"
-pytest = "^8.4.2"
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "isort>=6.0.0",
+    "mypy>=1.18.2",
+    "pytest>=8.4.2",
+]
 
 [build-system]
 requires = ["poetry-core"]
