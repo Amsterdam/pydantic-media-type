@@ -65,7 +65,7 @@ uv add name-of-the-dependency-to-install
 
 ### Dev tools
 This project uses `ruff`, `mypy` and `pytest`.
-The preferred way to run them is using the container, for example:
+The preferred way to run them is by using the container, for example:
 ```shell
 docker compose build
 docker compose run --rm pydantic-media-type sh
