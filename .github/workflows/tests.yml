@@ -25,4 +25,4 @@ jobs:
         run: docker buildx bake --file docker-compose.yml --file docker-compose.cache.json
 
       - name: Test
-        run: docker compose run --rm pydantic-media-type pytest -v
+        run: docker compose run --rm pydantic-media-type uv run pytest -v
