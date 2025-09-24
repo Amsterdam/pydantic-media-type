@@ -1,12 +1,12 @@
 from mimetypes import MimeTypes
-from typing import Any
+from typing import Any, ClassVar
 
 from pydantic import GetCoreSchemaHandler
 from pydantic_core import CoreSchema, PydanticCustomError, core_schema
 
 
 class MediaType(str):
-    types: list[str] = []
+    types: ClassVar[list[str]] = []
 
     @classmethod
     def _init_types(cls) -> None:
@@ -30,7 +30,7 @@ class MediaType(str):
 
     @classmethod
     def __get_pydantic_core_schema__(
-        cls, source_type: Any, handler: GetCoreSchemaHandler
+        cls, source_type: Any, handler: GetCoreSchemaHandler,
     ) -> CoreSchema:
         return core_schema.with_info_before_validator_function(
             cls._validate,
