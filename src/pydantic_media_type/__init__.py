@@ -13,7 +13,7 @@ class MediaType(str):
         if len(cls.types) == 0:
             mime_types = MimeTypes()
             for types_map in mime_types.types_map_inv:
-                for mime_type in types_map.keys():
+                for mime_type in types_map:
                     if mime_type not in cls.types:
                         cls.types.append(mime_type)
 
@@ -22,8 +22,9 @@ class MediaType(str):
         cls._init_types()
 
         if value not in cls.types:
+            msg = "media_type_unsupported"
             raise PydanticCustomError(
-                "media_type_unsupported", "Provided media type is not valid"
+                msg, "Provided media type is not valid",
             )
 
         return value
