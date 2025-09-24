@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # https://github.com/actions/checkout
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -25,4 +25,4 @@ jobs:
         run: docker buildx bake --file docker-compose.yml --file docker-compose.cache.json
 
       - name: Test
-        run: docker compose run --rm pydantic-media-type pytest -v
+        run: docker compose run --rm pydantic-media-type uv run pytest -v

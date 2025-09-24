@@ -3,5 +3,11 @@ services:
     image: amsterdam/pydantic-media-type
     build:
       context: .
+      args:
+        PYTHON_VERSION: ${PYTHON_VERSION:-3.13}
     volumes:
-      - ".:/opt/pydantic-media-type"
+      - ".:/app:rw,Z"
+    develop:
+      watch:
+        - action: rebuild
+          path: ./uv.lock
