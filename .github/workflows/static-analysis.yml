@@ -27,7 +27,7 @@ jobs:
       - name: ruff
         run: uv run ruff check
 
-  MyPy:
+  Ty:
     runs-on: ubuntu-latest
 
     steps:
@@ -47,5 +47,5 @@ jobs:
       - name: Install the project
         run: uv sync --locked --all-extras --dev
 
-      - name: mypy
+      - name: ty
         run: uv run ty check --output-format=github
