@@ -48,4 +48,4 @@ jobs:
         run: uv sync --locked --all-extras --dev
 
       - name: mypy
-        run: uv run mypy --strict .
+        run: uv run ty check --output-format=github
