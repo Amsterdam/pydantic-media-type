@@ -7,6 +7,16 @@ permissions:
 jobs:
   run_tests:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version:
+          - "3.11"
+          - "3.12"
+          - "3.13"
+          - "3.14"
+          - "3.15"
+    env:
+      PYTHON_VERSION: ${{ matrix.python-version }}
     steps:
       # https://github.com/actions/checkout
       - uses: actions/checkout@v5
